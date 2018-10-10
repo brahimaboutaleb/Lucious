@@ -1,0 +1,180 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.seu.magiccamera.activity.CameraActivity"
+    >
+<!---->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--摄像机部分-->
+        <RelativeLayout
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <!--改了相机的id-->
+            <com.seu.magicfilter.widget.MagicCameraView
+                android:id="@+id/glsurfaceview_camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true" >
+            </com.seu.magicfilter.widget.MagicCameraView>
+
+            <ImageView
+                android:id="@+id/iv_show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+
+            <com.seu.magicfilter.camera.StickerView
+                android:id="@+id/sticker"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+
+        <!--最上方的相册和旋转相机按钮-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/btn_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_album"
+                android:layout_marginRight="50dp"
+                />
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_camera_switch"
+                android:layout_height="wrap_content"
+                android:src="@drawable/selector_rewardcamera"/>
+        </LinearLayout>
+
+        <!--能上滑的滤镜模板-->
+        <include
+            android:id="@+id/layout_filter"
+            layout="@layout/filter_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="bottom"
+            android:visibility="invisible" />
+
+        <!--下面的warp_content可能需要修改-->
+        <!--能上滑的帖纸模板-->
+        <include
+            android:id="@+id/layout_sticker"
+            layout="@layout/sticker_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="bottom"
+            android:visibility="invisible" />
+
+
+
+        <!--屏幕最下方面的点-->
+        <ImageView
+            android:id="@+id/video_point_show"
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:visibility="invisible"
+            ></ImageView>
+
+        <!--主界面三个主要的大按钮-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200.0dip"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                android:paddingBottom="40dip"
+                android:paddingTop="0dip">
+
+                <ImageView
+                    android:id="@+id/btn_camera_sticker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dip"
+                    android:layout_marginTop="80dip"
+                    android:background="@drawable/ic_sticker"
+                    android:scaleType="center"></ImageView>
+
+                <ImageView
+                    android:id="@+id/btn_camera_shutter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginTop="50dip"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/btn_camera_shutter"></ImageView>
+
+                <ImageView
+                    android:id="@+id/btn_camera_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="80dip"
+                    android:background="@drawable/btn_camera_filter"
+                    android:scaleType="center"></ImageView>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <!--切换拍照摄影模式-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mode_select_listView"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_above="@+id/point_show"
+                android:background="@android:color/transparent"
+                android:padding="5.0dip"
+                android:scrollbars="none">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <ImageView
+                android:id="@+id/point_show"
+                android:layout_width="15dip"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:src="@drawable/ic_point_show"></ImageView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
