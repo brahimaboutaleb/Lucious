@@ -2,11 +2,11 @@
 A Beautiful and Interesting Camera.
 
 ## Usage
-### Face Static/Real-time Dynamic Detection
-### Real-time Widget
-### Skin grinding, Face lift, Big eyes, Whitening and ruddy
-### More than 40 Real-time Filters
-### facial expression recognition 
-### pictures' style conversion
+1. Face Static/Real-time Dynamic Detection
+2. Real-time Widget
+3. Skin grinding, Face lift, Big eyes, Whitening and ruddy
+4. More than 40 Real-time Filters
+5. facial expression recognition 
+6. pictures' style conversion
 
 
